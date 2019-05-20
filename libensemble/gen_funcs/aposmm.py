@@ -136,7 +136,7 @@ def aposmm_logic(H,persis_info,gen_specs,_):
 
     n, n_s, c_flag, O, r_k, mu, nu = initialize_APOSMM(H, gen_specs)
 
-    # np.savez('H'+str(len(H)),H=H,gen_specs=gen_specs,persis_info=persis_info)
+    #np.savez(os.path.join('/zfs/safrolab/users/rshaydu/quantum/data/for_jeff/full_calls_libensemble', 'H'+str(len(H))),H=H,gen_specs=gen_specs,persis_info=persis_info)
     if n_s < gen_specs['initial_sample_size']:
         updated_inds = set()
 
@@ -543,10 +543,10 @@ def set_up_and_run_nlopt(Run_H, gen_specs):
     dist_to_bound = min(min(ub-x0),min(x0-lb))
     assert dist_to_bound > np.finfo(np.float32).eps, "The distance to the boundary is too small for NLopt to handle"
 
-    if 'dist_to_bound_multiple' in gen_specs:
-        opt.set_initial_step(dist_to_bound*gen_specs['dist_to_bound_multiple'])
-    else:
-        opt.set_initial_step(dist_to_bound)
+    #if 'dist_to_bound_multiple' in gen_specs:
+    #    opt.set_initial_step(dist_to_bound*gen_specs['dist_to_bound_multiple'])
+    #else:
+    #    opt.set_initial_step(dist_to_bound)
 
     opt.set_maxeval(len(Run_H)+1) # evaluate one more point
     opt.set_min_objective(lambda x, grad: nlopt_obj_fun(x, grad, Run_H))

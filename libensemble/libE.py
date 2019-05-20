@@ -20,7 +20,7 @@ import traceback
 # (Set above libe imports so errors in import are captured)
 # LEVEL: DEBUG/INFO/WARNING/ERROR
 #logging.basicConfig(level=logging.INFO, format='%(name)s (%(levelname)s): %(message)s')
-logging.basicConfig(filename='ensemble.log', level=logging.DEBUG, format='%(name)s (%(levelname)s): %(message)s')
+#logging.basicConfig(filename='ensemble.log', level=logging.DEBUG, format='%(name)s (%(levelname)s): %(message)s')
 
 from libensemble.history import History
 from libensemble.libE_manager import manager_main
