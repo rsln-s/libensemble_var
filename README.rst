@@ -1,3 +1,5 @@
+Note: this is a fork of `https://github.com/Libensemble/libensemble`
+
 ===========
 libEnsemble
 ===========
